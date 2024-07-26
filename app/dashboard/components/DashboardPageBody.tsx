@@ -113,13 +113,13 @@ export function DashboardPageBody() {
             <div className=" flex flex-col md:flex-row items-start md:items-center md:justify-between w-full gap-4 md:gap-0">
                 <h3 className=" text-2xl">{currentShelve?.title ?? "-"}</h3>
                 <div className="flex flex-row items-center gap-4">
-                    <button disabled={page === 1} onClick={() => {
+                    <button id={"prev-page-button"} disabled={page === 1} onClick={() => {
                         dispatch(changePage(page - 1))
                     }}
                             className="rounded-full border-[1px] p-1 border-black hover:border-opacity-75 flex justify-center ">
                         <HiOutlineChevronLeft className="h-6 w-6 text-black group-hover:text-opacity-75"/></button>
-                    <span>{page}</span>
-                    <button disabled={books.length === 0 || books.length < perPage} onClick={() => {
+                    <span id="current-page">{page}</span>
+                    <button id={"next-page-button"} disabled={books.length === 0 || books.length < perPage} onClick={() => {
                         dispatch(changePage(page + 1))
                     }}
                             className="rounded-full border-[1px] p-1 border-black hover:border-opacity-75 flex justify-center ">
