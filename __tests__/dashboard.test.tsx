@@ -61,19 +61,6 @@ describe("Dashboard", () => {
             return element.tagName.toLowerCase() === 'button' && element.id === 'next-page-button';
         })
 
-        await act(async () => {
-
-            await new Promise((r) => setTimeout(r, 120000));
-
-            console.log(nextPage.disabled);
-            expect(nextPage).not.toBeDisabled();
-
-
-
-        })
-
-
-
 
         expect(currentPage).toHaveTextContent('1');
     }, 300 * SECONDS);
