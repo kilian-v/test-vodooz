@@ -81,7 +81,7 @@ export default function BookPage() {
     return (loadingBook || book === undefined ? <div className="flex items-center justify-center mt-auto h-[40vh]  w-full ">
             <ImSpinner10 className="h-10 w-10 animate-spin text-black"/>
         </div> : <div className="flex flex-col relative font-montserrat text-black ">
-            <div className="flex flex-col self-end gap-8 max-w-lg">
+            <div className="flex flex-col items-start self-end gap-8 w-1/2 max-w-lg">
                 <span className="font-semibold text-4xl">{book?.title}</span>
                 <span className="font-medium text-2xl">{getAuthors}</span>
                 <div className="w-full flex flex-row items-center justify-start gap-1 ">

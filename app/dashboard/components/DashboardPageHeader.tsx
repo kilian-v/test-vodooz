@@ -56,6 +56,7 @@ export function DashboardPageHeader() {
                 <div className="w-56">
                     <Listbox value={currentShelve} onChange={(value) => {
                         dispatch(changeCurrentShelve(value));
+                        dispatch(changePage(1));
                     }}>
                         <div className="relative ">
                             <ListboxButton

@@ -132,11 +132,12 @@ export function DashboardPageBody() {
                 <div className="w-20">
                     <Listbox value={perPage} onChange={(value) => {
                         dispatch(changePerPage(value));
+                        dispatch(changePage(1));
                     }}>
                         <div className="relative ">
                             <ListboxButton
                                 className="relative w-full cursor-default rounded-md bg-white py-1.5 px-1 text-center text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                <span className="block truncate">{perPage ?? "Veuillez selectionner un élément"}</span>
+                                <span id="per-page-selected" className="block truncate">{perPage ?? "Veuillez selectionner un élément"}</span>
 
                             </ListboxButton>
 
@@ -146,11 +147,13 @@ export function DashboardPageBody() {
                             >
                                 {generatePerPageOption().map((page) => (
                                     <ListboxOption
-                                        key={page}
+
+                                        key={`per-page-option-${page}`}
                                         value={page}
                                         className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
                                     >
                                         <span
+
                                             className="block truncate font-normal group-data-[selected]:font-semibold">{page}</span>
 
                                         <span
